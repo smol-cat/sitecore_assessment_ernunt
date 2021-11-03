@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Sitecore.Models.MovieModel>
+
+@{
+    ViewBag.Title = "Top upcoming movies";
+}
+
+<h1>Top 5 Upcoming Movies</h1>
+
+<div id="content">
+
+    @foreach (var item in Model)
+    {
+        <div class="item">
+            <div class="titleLine">
+                @Html.ActionLink(item.name, "Details", new { id = item.id, directorId = item.directorId }, null)
+            </div>
+            <div class="descWrapper">
+                <div class="description">
+                    <p><b>@Html.DisplayNameFor(model => model.name): </b>@item.name</p>
+                    <p><b>@Html.DisplayNameFor(model => model.releaseDate): </b>@item.releaseDate</p>
+                    <p><b>@Html.DisplayNameFor(model => model.directorName): </b>@item.directorName</p>
+                    @*<p><b>@Html.ActionLink("Info", "DirectorDetails", new { id = item.directorId }, null)</b></p>*@
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

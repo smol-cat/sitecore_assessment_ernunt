@@ -1,0 +1,23 @@
+﻿@model Sitecore.Models.DirectorModel
+
+@{
+    ViewBag.Title = "DirectorDetails";
+}
+
+<h2>About director</h2>
+
+<div id="content">
+    <div class="item">
+        <div class="titleLine">
+            @Html.DisplayFor(model => model.name)
+        </div>
+        <hr />
+        <p><b>@Html.DisplayNameFor(model => model.name): </b>@Html.DisplayFor(model => model.name)</p>
+        <p><b>@Html.DisplayNameFor(model => model.birthDate): </b>@Html.DisplayFor(model => model.birthDate)</p>
+    </div>
+    <p>
+        <div class="descBottom">
+            <div class="btn">@Html.ActionLink("Back to List", "Index")</div>
+        </div>
+    </p>
+</div>

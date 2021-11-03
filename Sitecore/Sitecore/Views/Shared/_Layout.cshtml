@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NetNix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" lang="en" content="open source x/html and css templates">
+    <meta name="author" content="mlp design">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/responsive.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="body">
+            <!--start header-->
+            <div id="banner">
+                <h1>Net<em>Nix</em></h1>
+                <p>The best movie site in the World!</p>
+                <!-- menu -->
+                <label for="show-menu" class="responsive">&#9776;</label>
+                <input type="checkbox" id="show-menu" role="button">
+                <ul id="topnav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Movies", "Index", "Movie")</li>
+                </ul>
+                <!-- end menu -->
+            </div>
+            <!--end of banner-->
+            <div class="clear"></div>
+            <div id="container">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            <span class="left">2021 &copy; Copyright <a href="#">Ernestas Untulis</a>. All rights reserved.</span>
+            <span class="right"><a href="#">Contact</a> | <a href="#">Site Map</a></span>
+            <p class="show-footer">2021 &copy; Copyright <a href="#">Ernestas Untulis</a>. All rights reserved.<br /><a href="#">Contact</a> | <a href="#">Site Map</a></p>
+        </div>
+    </div>
+    <div id="credits">
+        <span><a href="http://www.mlpdesign.net" title="CSS &amp; HTML by MLP Design.net">CSS &amp; HTML</a> by MLP Design<br />Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0</a>.</span>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
